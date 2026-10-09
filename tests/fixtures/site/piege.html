@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Piège au clavier</title></head>
+<body>
+<a href="#contenu">Aller au contenu</a>
+<header><nav><a href="conforme.html">Accueil</a></nav></header>
+<main id="contenu" tabindex="-1">
+<h1>Piège au clavier</h1>
+<form><label for="code">Code</label> <input id="code" name="code"> <button type="submit">Valider</button></form>
+<script>document.getElementById("code").addEventListener("keydown", function (event) { if (event.key === "Tab") { event.preventDefault(); } });</script>
+</main>
+<footer><p>2026</p></footer>
+</body>
+</html>
