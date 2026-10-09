@@ -1,0 +1,33 @@
+{
+    "name": "azepo/rgaa-check-behat",
+    "description": "Étapes Behat pour contrôler l'accessibilité RGAA 4.1 d'une page pendant un scénario, avec ou sans navigateur",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["rgaa", "accessibilité", "accessibility", "a11y", "behat", "mink", "bdd"],
+    "require": {
+        "php": ">=8.2",
+        "azepo/rgaa-check": "^1.0 || dev-develop || dev-main",
+        "behat/behat": "^3.14",
+        "behat/mink": "^1.11",
+        "friends-of-behat/mink-extension": "^2.7"
+    },
+    "require-dev": {
+        "behat/mink-browserkit-driver": "^2.2",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^11.5 || ^12.0 || ^13.0",
+        "symfony/http-client": "^6.4 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Azepo\\RgaaCheckBehat\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Azepo\\RgaaCheckBehat\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

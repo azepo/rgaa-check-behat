@@ -1,0 +1,34 @@
+# Scénarios d'essai du paquet. Servir d'abord les pages d'essai :
+#   php -S 127.0.0.1:8765 -t tests/fixtures/site
+default:
+    suites:
+        default:
+            paths: ['%paths.base%/features']
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - Azepo\RgaaCheckBehat\RgaaContext
+    extensions:
+        Behat\MinkExtension:
+            base_url: 'http://127.0.0.1:8765'
+            sessions:
+                default:
+                    browserkit_http: ~
+
+# Avec un navigateur : vendor/bin/behat --profile=chrome
+# Démarrer d'abord Chromium : chromium --headless=new --remote-debugging-port=9222
+chrome:
+    suites:
+        default:
+            filters:
+                tags: '@javascript'
+    extensions:
+        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+        Behat\MinkExtension:
+            base_url: 'http://127.0.0.1:8765'
+            browser_name: chrome
+            default_session: chrome
+            javascript_session: chrome
+            sessions:
+                chrome:
+                    chrome:
+                        api_url: 'http://127.0.0.1:9222'
