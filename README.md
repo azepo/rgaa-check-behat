@@ -31,7 +31,18 @@ PHP 8.2 ou plus récent, Behat 3.
 composer require --dev azepo/rgaa-check-behat
 ```
 
-Le paquet n'est pas encore publié. D'ici là, déclarer son dépôt dans le `composer.json` du projet, comme pour `rgaa-check`.
+Les deux paquets sont sur GitHub, pas sur Packagist. Déclarer leurs dépôts dans le `composer.json` du projet avant la commande ci-dessus :
+
+```json
+{
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/azepo/rgaa-check" },
+        { "type": "vcs", "url": "https://github.com/azepo/rgaa-check-behat" }
+    ]
+}
+```
+
+Tant qu'aucune version de ce paquet n'est étiquetée, demander la branche principale : `composer require --dev azepo/rgaa-check-behat:dev-main`.
 
 Il faut aussi un pilote Mink. Deux cas :
 
